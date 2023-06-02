@@ -1,4 +1,5 @@
 import MainNavigation from "./components/UI/MainNavigation";
+import HabitsList from "./components/Habits/HabitsList";
 
 import "./App.css";
 
