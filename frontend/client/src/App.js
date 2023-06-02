@@ -2,10 +2,6 @@ import MainNavigation from "./components/UI/MainNavigation";
 
 import "./App.css";
 
-<<<<<<< Updated upstream
-function App() {
-  return <MainNavigation />;
-=======
 const DUMMY_HABITS = [
   {
     title: "Exercise 1hr everyday",
@@ -24,7 +20,6 @@ function App() {
       <HabitsList habits={DUMMY_HABITS} />
     </>
   );
->>>>>>> Stashed changes
 }
 
 export default App;
