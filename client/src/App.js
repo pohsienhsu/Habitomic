@@ -1,26 +1,27 @@
+import { useEffect, useState } from "react";
+
 import MainNavigation from "./components/UI/MainNavigation";
 import HabitsList from "./components/Habits/HabitsList";
 
 import "./App.css";
 
-const DUMMY_HABITS = [
-  {
-    title: "Exercise 1hr everyday",
-    cue: "alarm at 2:00pm",
-    craving: "to stop studying",
-    action: "do exercise at the gym",
-    reward: "get buff and tasty protein shake",
-    streaks: 0,
-  },
-];
+const App = () => {
+  const [habits, setHabits] = useState([]);
 
-function App() {
+  useEffect(() => {
+    fetch("http://localhost:8000/")
+      .then((res) => res.json())
+      .then((data) => {
+        setHabits(data.habits);
+      });
+  }, []);
+
   return (
     <>
       <MainNavigation />
-      <HabitsList habits={DUMMY_HABITS} />
+      <HabitsList habits={habits} />
     </>
   );
-}
+};
 
 export default App;
